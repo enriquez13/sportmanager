@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routers import productos, ventas, separados, pedidos, facturas
+from routers import productos, ventas, separados, pedidos, facturas
 
 app = FastAPI(title="SportManager API", version="1.0.0")
 
