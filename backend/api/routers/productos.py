@@ -1,6 +1,8 @@
 from fastapi import APIRouter, HTTPException
-from ..database import supabase
-from ..models import ProductoCreate, ProductoUpdate
+# Cambiamos de 'from ..database' a esto:
+from database import supabase 
+# Y lo mismo para models si está en /api/models.py
+from models import ProductoCreate, ProductoUpdate
 
 router = APIRouter()
 
