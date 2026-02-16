@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
 # Ruta exacta según tu árbol de archivos
 from backend.api.routers import productos, ventas, separados, pedidos, facturas 
 
