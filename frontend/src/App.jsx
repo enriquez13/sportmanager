@@ -108,7 +108,7 @@ function PageTopbar({ onMenuClick }) {
           <line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
       </button>
-      <div className="page-title">KOM sports</div>
+      <div className="page-title"></div>
       <div style={{ width: 40 }} /> {/* spacer para centrar el título */}
     </div>
   )
