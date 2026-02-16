@@ -242,6 +242,27 @@ textarea.form-control { resize:vertical; min-height:80px; }
     text-align: center;
     flex: 1;
   }
+  /* 1. Definimos qué dice en COMPUTADOR (Desktop) */
+.page-title::after {
+  content: "GESTIÓN ADMINISTRATIVA"; /* O la palabra que quieras para PC */
+}
+
+/* --- Ve a tu bloque @media (max-width: 768px) y añade esto: --- */
+@media (max-width: 768px) {
+  /* ... tus otras reglas ... */
+
+  .page-title {
+    font-size: 22px;
+    text-align: center;
+    flex: 1;
+  }
+
+  /* 2. Cambiamos el contenido a "KOM sports" solo para MÓVIL */
+  .page-title::after {
+    content: "KOM SPORTS";
+  }
+}
+
   .topbar-actions {
     gap: 6px;
   }
