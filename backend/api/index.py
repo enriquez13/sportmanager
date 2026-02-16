@@ -1,36 +1,31 @@
 import os
-import sys
 from fastapi import FastAPI
-
-# Asegura que Python vea tus carpetas locales
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-try:
-    from supabase import create_client
-    SUPABASE_INSTALLED = True
-except ImportError:
-    SUPABASE_INSTALLED = False
+from fastapi.middleware.cors import CORSMiddleware
+# Importación estándar 2026:
+from supabase import create_client, Client
 
 app = FastAPI()
 
+# Configuración de CORS para el frontend que está en el otro proyecto de Vercel
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Variables de entorno (Asegúrate de que no tengan espacios en Vercel)
+url: str = os.environ.get("SUPABASE_URL", "").strip()
+key: str = os.environ.get("SUPABASE_KEY", "").strip()
+
+# Inicialización fuera de las rutas para mejor rendimiento (Serverless Cold Start)
+supabase: Client = create_client(url, key)
+
 @app.get("/")
-def check_connection():
-    url = os.environ.get("SUPABASE_URL")
-    key = os.environ.get("SUPABASE_KEY")
+def home():
+    return {"status": "success", "message": "SportManager 2026 Online"}
 
-    if not SUPABASE_INSTALLED:
-        return {"status": "error", "message": "Falta 'supabase' en requirements.txt"}
-    
-    if not url or not key:
-        return {"status": "error", "message": "Faltan las variables en Vercel"}
-
-    try:
-        # Probamos la conexión
-        supabase = create_client(url, key)
-        return {
-            "status": "success",
-            "message": "¡SportManager conectado a Supabase! 🏃🎁",
-            "url_activa": url
-        }
-    except Exception as e:
-        return {"status": "error", "details": str(e)}
+# Si vas a importar tus routers, hazlo así:
+# from routers import productos
+# app.include_router(productos.router)
