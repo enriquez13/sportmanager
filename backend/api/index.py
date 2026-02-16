@@ -1,15 +1,17 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-@app.get("/")
-def read_root():
-    return {
-        "status": "online",
-        "message": "SportManager API está viva 🚀",
-        "env": "Vercel Production 2026"
-    }
+# Importante para que tu Frontend (en el otro proyecto) pueda consultarlo
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], 
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-@app.get("/test")
-def test_route():
-    return {"message": "La ruta de prueba funciona correctamente"}
+@app.get("/")
+def home():
+    return {"status": "backend_online", "message": "Regalo para prima en proceso 🎁"}
