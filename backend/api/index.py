@@ -1,6 +1,12 @@
+import os
+import sys
+
+# Esto le dice a Vercel que busque en la carpeta actual para encontrar 'routers', 'database', etc.
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from .routers import productos, ventas, separados, pedidos, facturas
+from routers import productos, ventas, separados, pedidos, facturas
 
 app = FastAPI()
 
