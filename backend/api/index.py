@@ -1,30 +1,21 @@
 import os
-import sys
-
-# Esto le dice a Vercel que busque en la carpeta actual para encontrar 'routers', 'database', etc.
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from routers import productos, ventas, separados, pedidos, facturas
+from supabase import create_client, Client
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # ⚠️ en producción reemplaza por tu dominio frontend de Vercel
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-app.include_router(productos.router, prefix="/productos", tags=["productos"])
-app.include_router(ventas.router,    prefix="/ventas",    tags=["ventas"])
-app.include_router(separados.router, prefix="/separados", tags=["separados"])
-app.include_router(pedidos.router,   prefix="/pedidos",   tags=["pedidos"])
-app.include_router(facturas.router,  prefix="/facturas",  tags=["facturas"])
+# Traemos las credenciales de las variables de entorno de Vercel
+url: str = os.environ.get("SUPABASE_URL")
+key: str = os.environ.get("SUPABASE_KEY")
 
 @app.get("/")
-def home():
-    return {"status": "ok", "message": "SportManager API 🏃"}
-
+def test_supabase():
+    try:
+        # Intentamos crear el cliente
+        supabase: Client = create_client(url, key)
+        # Hacemos una consulta mini a cualquier tabla (ej. productos)
+        # Si no tienes tablas aún, solo comenta la línea de abajo
+        # response = supabase.table("productos").select("*").limit(1).execute()
+        return {"status": "success", "message": "Conectado a Supabase correctamente"}
+    except Exception as e:
+        return {"status": "error", "reason": str(e)}
