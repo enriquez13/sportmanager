@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from datetime import datetime
-from ..database import supabase
-from ..models import PedidoCreate, PedidoUpdate
+from database import supabase
+from models import PedidoCreate, PedidoUpdate
 
 router = APIRouter()
 

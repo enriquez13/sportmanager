@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from datetime import datetime
-from ..database import supabase
-from ..models import FacturaCreate
+from database import supabase
+from models import FacturaCreate
 
 router = APIRouter()
 

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from datetime import datetime
-from ..database import supabase
-from ..models import VentaCreate
+from database import supabase
+from models import VentaCreate
 
 router = APIRouter()
 

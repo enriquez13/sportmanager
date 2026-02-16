@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 from datetime import datetime
-from ..database import supabase
-from ..models import SeparadoCreate, SeparadoUpdate
+from database import supabase
+from models import SeparadoCreate, SeparadoUpdate
 
 router = APIRouter()
 
