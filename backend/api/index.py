@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # 2. IMPORTACIONES LOCALES (Ahora que el path está arreglado)
-from routers import productos
+from routers import productos,ventas, separados, pedidos, facturas
 # Descomenta los demás a medida que los limpies de los ".."
 # from routers import ventas, separados, pedidos, facturas
 
@@ -24,6 +24,10 @@ app.add_middleware(
 
 # 4. RUTAS
 app.include_router(productos.router, prefix="/productos", tags=["productos"])
+app.include_router(ventas.router,    prefix="/ventas",    tags=["ventas"])
+app.include_router(separados.router, prefix="/separados", tags=["separados"])
+app.include_router(pedidos.router,   prefix="/pedidos",   tags=["pedidos"])
+app.include_router(facturas.router,  prefix="/facturas",  tags=["facturas"])
 
 @app.get("/")
 def home():
