@@ -31,8 +31,8 @@ export default function App() {
       {/* SIDEBAR — desktop siempre visible, móvil deslizable */}
       <nav className={`sidebar ${sidebarOpen ? 'sidebar-open' : ''}`}>
         <div className="logo">
-          <div className="logo-title">SportManager</div>
-          <div className="logo-sub">Pro · Pasto</div>
+          <div className="logo-title">KOM sports</div>
+          <div className="logo-sub">Pasto</div>
         </div>
         <div className="nav">
           <div className="nav-section">Principal</div>
@@ -97,7 +97,7 @@ function PageTopbar({ onMenuClick }) {
     '/pedidos':    'Pedidos',
     '/facturas':   'Facturas',
   }
-  const title = titles[location.pathname] || 'SportManager'
+  const title = titles[location.pathname] || 'KOM sports'
 
   return (
     <div className="topbar">
@@ -108,7 +108,7 @@ function PageTopbar({ onMenuClick }) {
           <line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
       </button>
-      <div className="page-title">{title}</div>
+      <div className="page-title">KOM sports</div>
       <div style={{ width: 40 }} /> {/* spacer para centrar el título */}
     </div>
   )
