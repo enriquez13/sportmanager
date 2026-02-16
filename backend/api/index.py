@@ -14,7 +14,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # Variables de entorno (Asegúrate de que no tengan espacios en Vercel)
 url: str = os.environ.get("SUPABASE_URL", "").strip()
 key: str = os.environ.get("SUPABASE_KEY", "").strip()
