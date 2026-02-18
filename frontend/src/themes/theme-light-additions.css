@@ -1,0 +1,57 @@
+/* ============================================================
+   TEMA CLARO — ajustes adicionales para clientes con fondo blanco
+   Pega esto al FINAL de index.css (después del bloque responsive)
+   ============================================================ */
+
+/* Detecta si el tema es claro comparando el color de fondo */
+/* Como inyectamos --bg desde JS, usamos una clase en el html */
+/* ThemeContext agrega automáticamente la clase 'theme-light' si bg es claro */
+
+.theme-light body {
+  color-scheme: light;
+}
+
+/* Scrollbar clara */
+.theme-light ::-webkit-scrollbar-track { background: #f5f0f2; }
+.theme-light ::-webkit-scrollbar-thumb { background: #e8d0dc; }
+
+/* Sombras más suaves en tema claro */
+.theme-light .sidebar {
+  box-shadow: 2px 0 20px rgba(232, 68, 122, 0.06);
+}
+.theme-light .card {
+  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+}
+.theme-light .topbar {
+  box-shadow: 0 1px 0 var(--border);
+}
+
+/* Modal overlay más suave */
+.theme-light .modal-overlay {
+  background: rgba(26, 17, 24, 0.45);
+}
+
+/* Bottom nav en tema claro */
+.theme-light .bottom-nav {
+  box-shadow: 0 -2px 16px rgba(232, 68, 122, 0.1);
+}
+
+/* Hover en filas de tabla */
+.theme-light tr:hover td {
+  background: rgba(232, 68, 122, 0.03);
+}
+
+/* Autocomplete */
+.theme-light .autocomplete-item:hover {
+  background: #fdf0f4;
+}
+
+/* Inputs con foco */
+.theme-light .form-control:focus {
+  box-shadow: 0 0 0 3px rgba(232, 68, 122, 0.12);
+}
+
+/* Botón primario con sombra rosada */
+.theme-light .btn-primary:hover {
+  box-shadow: 0 4px 16px rgba(232, 68, 122, 0.35);
+}
