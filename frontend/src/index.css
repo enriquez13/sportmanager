@@ -258,9 +258,9 @@ textarea.form-control { resize:vertical; min-height:80px; }
   }
 
   /* 2. Cambiamos el contenido a "KOM sports" solo para MÓVIL */
-  .page-title::after {
+  /*.page-title::after {
     content: "KOM SPORTS";
-  }
+  }*/
 }
 
   .topbar-actions {
