@@ -26,6 +26,7 @@ export function ThemeProvider({ children }) {
     root.style.setProperty('--bg',       c.bg)
     root.style.setProperty('--surface',  c.surface)
     root.style.setProperty('--surface2', c.surface2)
+    root.style.setProperty('--surface3', c.surface3)
     root.style.setProperty('--border',   c.border)
     root.style.setProperty('--accent',   c.accent)
     root.style.setProperty('--accent2',  c.accent2)
