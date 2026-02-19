@@ -10,6 +10,7 @@ const cliente2Theme = {
     bg:       "#fff0f5",
     surface:  "#ffe4ef",
     surface2: "#ffffff",
+    surface3: "#ffffff",
     border:   "#ffd6e7",
     accent:   "#e8357a",
     accent2:  "#f79cbd",
