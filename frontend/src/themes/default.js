@@ -10,6 +10,7 @@ const defaultTheme = {
     bg:       "#0a0a0f",
     surface:  "#13131a",
     surface2: "#1c1c28",
+    surface3:  "#13131a",,
     border:   "#2a2a3d",
     accent:   "#ff4d00",
     accent2:  "#ff8c42",
