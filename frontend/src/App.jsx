@@ -87,8 +87,8 @@ export default function App() {
 function PageTopbar({ onMenuClick }) {
   const location = useLocation()
   const titles = {
-    '/': 'Dashboard', '/inventario': 'Inventario', '/ventas': 'Ventas',
-    '/separados': 'Separados', '/pedidos': 'Pedidos', '/facturas': 'Facturas',
+    '/': theme.business.name, '/inventario': theme.business.name, '/ventas': theme.business.name,
+    '/separados': theme.business.name, '/pedidos': theme.business.name, '/facturas': theme.business.name,
   }
   return (
     <div className="topbar">
