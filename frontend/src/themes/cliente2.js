@@ -7,9 +7,9 @@ const cliente2Theme = {
     emoji:   "👗",
   },
   colors: {
-    bg:       "#ffffff",
+    bg:       "#ffe4ef",
     surface:  "#fff0f5",
-    surface2: "#ffe4ef",
+    surface2: "#ffffff",
     border:   "#ffd6e7",
     accent:   "#e8357a",
     accent2:  "#f79cbd",
