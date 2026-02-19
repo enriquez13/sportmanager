@@ -86,6 +86,7 @@ export default function App() {
 
 function PageTopbar({ onMenuClick }) {
   const location = useLocation()
+  const theme = useTheme() 
   const titles = {
     '/': theme.business.name, '/inventario': theme.business.name, '/ventas': theme.business.name,
     '/separados': theme.business.name, '/pedidos': theme.business.name, '/facturas': theme.business.name,
