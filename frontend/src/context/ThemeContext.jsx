@@ -27,7 +27,6 @@ export function ThemeProvider({ children }) {
     root.style.setProperty('--surface',  c.surface)
     root.style.setProperty('--surface2', c.surface2)
     root.style.setProperty('--surface3', c.surface3)
-    root.style.setProperty('--surface4', c.surface4)
     root.style.setProperty('--border',   c.border)
     root.style.setProperty('--accent',   c.accent)
     root.style.setProperty('--accent2',  c.accent2)
@@ -38,7 +37,7 @@ export function ThemeProvider({ children }) {
     root.style.setProperty('--red',      c.red)
     root.style.setProperty('--blue',     c.blue)
 
-    
+
     // Fuentes
     root.style.setProperty('--font-display', theme.fonts.display)
     root.style.setProperty('--font-body',    theme.fonts.body)
