@@ -59,7 +59,7 @@ body {
 
 /* Cards */
 .card { background: var(--surface3); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-.card-header { padding: 18px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; background: var(--surface4);}
+.card-header { padding: 18px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
 .card-title  { font-weight: 600; font-size: 14px; }
 .card-body   { padding: 20px; }
 
