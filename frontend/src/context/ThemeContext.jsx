@@ -38,6 +38,7 @@ export function ThemeProvider({ children }) {
     root.style.setProperty('--red',      c.red)
     root.style.setProperty('--blue',     c.blue)
 
+    
     // Fuentes
     root.style.setProperty('--font-display', theme.fonts.display)
     root.style.setProperty('--font-body',    theme.fonts.body)
