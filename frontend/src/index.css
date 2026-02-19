@@ -243,8 +243,8 @@ textarea.form-control { resize:vertical; min-height:80px; }
     flex: 1;
   }
   /* 1. Definimos qué dice en COMPUTADOR (Desktop) */
-.page-title::after {
-  content: "GESTIÓN ADMINISTRATIVA"; /* O la palabra que quieras para PC */
+/*.page-title::after {
+  content: "GESTIÓN ADMINISTRATIVA";*/ /* O la palabra que quieras para PC */
 }
 
 /* --- Ve a tu bloque @media (max-width: 768px) y añade esto: --- */
